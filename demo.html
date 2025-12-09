@@ -1,0 +1,1463 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conversations with [Influencer Name] | Exclusive Podcast Interviews</title>
+    
+    <!-- SEO Meta Tags -->
+    <meta name="title" content="Conversations with [Influencer Name] | Exclusive Podcast Interviews">
+    <meta name="description" content="Join [Influencer Name] for exclusive, in-depth conversations with industry leaders, celebrities, and thought leaders. Subscribe for weekly podcast episodes and special interviews.">
+    <meta name="keywords" content="podcast, interviews, influencer, conversations, industry leaders, exclusive content, thought leadership, audio shows">
+    <meta property="og:title" content="Conversations with [Influencer Name]">
+    <meta property="og:description" content="Exclusive podcast interviews with the world's most interesting people">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="images/favicon.ico">
+    
+    <!-- Bootstrap 5 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- AOS Animation -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
+    <!-- Custom CSS -->
+    <style>
+        :root {
+            /* Modern Podcast/Influencer Color Scheme */
+            --primary: #8B5CF6; /* Vibrant purple */
+            --secondary: #10B981; /* Emerald green */
+            --accent: #F59E0B; /* Amber */
+            --dark: #1F2937; /* Dark gray */
+            --darker: #111827; /* Near black */
+            --light: #F9FAFB; /* Light gray */
+            --text: #374151; /* Gray text */
+            --text-light: #6B7280; /* Lighter gray */
+            --gradient: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            --gradient-hover: linear-gradient(135deg, var(--secondary) 0%, var(--primary) 100%);
+            --shadow: 0 10px 25px rgba(139, 92, 246, 0.1);
+            --shadow-hover: 0 20px 40px rgba(139, 92, 246, 0.15);
+            --border-radius: 12px;
+            --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.7;
+            color: var(--text);
+            background-color: var(--light);
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Playfair Display', serif;
+            font-weight: 700;
+            line-height: 1.2;
+        }
+
+        .gradient-text {
+            background: var(--gradient);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+
+        /* Premium Navbar */
+        .navbar-premium {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 1.2rem 0;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+            transition: var(--transition);
+        }
+
+        .navbar-premium.scrolled {
+            padding: 0.8rem 0;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .brand-wrapper {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .brand-logo {
+            width: 40px;
+            height: 40px;
+            background: var(--gradient);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+
+        .brand-main {
+            font-size: 1.8rem;
+            font-weight: 800;
+            color: var(--dark);
+            font-family: 'Playfair Display', serif;
+        }
+
+        .nav-link {
+            font-weight: 500;
+            color: var(--text) !important;
+            padding: 0.5rem 1.2rem !important;
+            transition: var(--transition);
+            position: relative;
+        }
+
+        .nav-link:after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            background: var(--gradient);
+            bottom: 0;
+            left: 1.2rem;
+            transition: var(--transition);
+        }
+
+        .nav-link:hover:after,
+        .nav-link.active:after {
+            width: calc(100% - 2.4rem);
+        }
+
+        .btn-nav-cta {
+            background: var(--gradient);
+            color: white;
+            padding: 0.8rem 2rem;
+            border-radius: 50px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: var(--transition);
+            box-shadow: var(--shadow);
+        }
+
+        .btn-nav-cta:hover {
+            transform: translateY(-3px);
+            box-shadow: var(--shadow-hover);
+            color: white;
+        }
+
+        /* Hero Section */
+        .hero-premium {
+            position: relative;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            overflow: hidden;
+            background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
+            padding-top: 120px;
+        }
+
+        .hero-background-animation {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+            pointer-events: none;
+            overflow: hidden;
+        }
+
+        .sound-wave {
+            position: absolute;
+            width: 300%;
+            height: 150%;
+            background: radial-gradient(circle at 50% 50%, rgba(139, 92, 246, 0.1) 0%, transparent 50%);
+            animation: waveAnimation 20s linear infinite;
+        }
+
+        @keyframes waveAnimation {
+            0% { transform: translateX(0) translateY(0); }
+            50% { transform: translateX(-50%) translateY(-25%); }
+            100% { transform: translateX(-100%) translateY(0); }
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero-badge {
+            display: inline-block;
+            background: var(--gradient);
+            color: white;
+            padding: 0.5rem 1.5rem;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 5px 15px rgba(139, 92, 246, 0.2);
+        }
+
+        .hero-title {
+            font-size: 3.8rem;
+            font-weight: 800;
+            margin-bottom: 1.5rem;
+            line-height: 1.1;
+        }
+
+        .hero-subtitle {
+            font-size: 1.25rem;
+            color: var(--text-light);
+            margin-bottom: 2.5rem;
+            max-width: 600px;
+        }
+
+        .hero-highlight {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: rgba(139, 92, 246, 0.1);
+            padding: 0.75rem 1.5rem;
+            border-radius: var(--border-radius);
+            margin: 1rem 0;
+            font-weight: 500;
+        }
+
+        .hero-highlight i {
+            color: var(--primary);
+        }
+
+        .hero-actions {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 3rem;
+            flex-wrap: wrap;
+        }
+
+        .btn-hero-primary {
+            background: var(--gradient);
+            color: white;
+            padding: 1rem 2.5rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: var(--transition);
+            box-shadow: var(--shadow);
+        }
+
+        .btn-hero-primary:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-hover);
+            color: white;
+        }
+
+        .btn-hero-secondary {
+            background: white;
+            color: var(--primary);
+            padding: 1rem 2rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            border: 2px solid rgba(139, 92, 246, 0.2);
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: var(--transition);
+        }
+
+        .btn-hero-secondary:hover {
+            background: rgba(139, 92, 246, 0.05);
+            color: var(--primary);
+            transform: translateY(-3px);
+        }
+
+        .hero-stats {
+            display: flex;
+            gap: 3rem;
+            margin-top: 3rem;
+        }
+
+        .stat-item h3 {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-item p {
+            color: var(--text-light);
+            font-weight: 500;
+        }
+
+        .hero-image {
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero-image img {
+            border-radius: var(--border-radius);
+            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.15);
+            width: 100%;
+            height: auto;
+            transform: perspective(1000px) rotateY(-5deg);
+            transition: var(--transition);
+        }
+
+        .hero-image img:hover {
+            transform: perspective(1000px) rotateY(0deg);
+        }
+
+        /* Featured Guests Section */
+        .guests-section {
+            padding: 6rem 0;
+            background: white;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .section-header h2 {
+            font-size: 3.2rem;
+            margin-bottom: 1rem;
+        }
+
+        .section-subtitle {
+            font-size: 1.25rem;
+            color: var(--text-light);
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .guests-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .guest-card {
+            background: white;
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            position: relative;
+        }
+
+        .guest-card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-hover);
+        }
+
+        .guest-image {
+            height: 250px;
+            overflow: hidden;
+        }
+
+        .guest-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: var(--transition);
+        }
+
+        .guest-card:hover .guest-image img {
+            transform: scale(1.05);
+        }
+
+        .guest-info {
+            padding: 2rem;
+        }
+
+        .guest-name {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            color: var(--dark);
+        }
+
+        .guest-title {
+            color: var(--primary);
+            font-weight: 600;
+            margin-bottom: 1rem;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .guest-excerpt {
+            color: var(--text-light);
+            margin-bottom: 1.5rem;
+            line-height: 1.6;
+        }
+
+        .guest-link {
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: var(--transition);
+        }
+
+        .guest-link:hover {
+            color: var(--secondary);
+            gap: 1rem;
+        }
+
+        /* Podcast Platforms */
+        .platforms-section {
+            padding: 4rem 0;
+            background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
+        }
+
+        .platforms-grid {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 3rem;
+            margin-top: 3rem;
+        }
+
+        .platform-item {
+            background: white;
+            padding: 1.5rem 2rem;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            font-weight: 600;
+            color: var(--dark);
+        }
+
+        .platform-item:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-hover);
+        }
+
+        .platform-icon {
+            font-size: 1.5rem;
+            color: var(--primary);
+        }
+
+        /* About Section */
+        .about-section {
+            padding: 6rem 0;
+            background: white;
+        }
+
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .about-image img {
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+            width: 100%;
+            height: auto;
+        }
+
+        .about-text h3 {
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .about-text p {
+            color: var(--text-light);
+            margin-bottom: 2rem;
+            line-height: 1.8;
+        }
+
+        .about-features {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .feature-item {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .feature-icon {
+            width: 50px;
+            height: 50px;
+            background: var(--gradient);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.2rem;
+            flex-shrink: 0;
+        }
+
+        .feature-content h4 {
+            font-size: 1.1rem;
+            margin-bottom: 0.25rem;
+            color: var(--dark);
+        }
+
+        .feature-content p {
+            font-size: 0.9rem;
+            margin-bottom: 0;
+            color: var(--text-light);
+        }
+
+        /* Latest Episodes */
+        .episodes-section {
+            padding: 6rem 0;
+            background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
+        }
+
+        .episodes-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .episode-card {
+            background: white;
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+        }
+
+        .episode-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-hover);
+        }
+
+        .episode-header {
+            padding: 2rem 2rem 1rem;
+        }
+
+        .episode-number {
+            display: inline-block;
+            background: rgba(139, 92, 246, 0.1);
+            color: var(--primary);
+            padding: 0.25rem 1rem;
+            border-radius: 50px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+
+        .episode-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: var(--dark);
+        }
+
+        .episode-guest {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .guest-avatar {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            overflow: hidden;
+        }
+
+        .guest-avatar img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .guest-details h4 {
+            font-size: 1.1rem;
+            margin-bottom: 0.25rem;
+        }
+
+        .guest-details p {
+            color: var(--text-light);
+            font-size: 0.9rem;
+        }
+
+        .episode-footer {
+            padding: 1.5rem 2rem;
+            border-top: 1px solid #e5e7eb;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .episode-meta {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            color: var(--text-light);
+            font-size: 0.9rem;
+        }
+
+        .play-btn {
+            width: 50px;
+            height: 50px;
+            background: var(--gradient);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .play-btn:hover {
+            transform: scale(1.1);
+        }
+
+        /* Newsletter Section */
+        .newsletter-section {
+            padding: 6rem 0;
+            background: var(--gradient);
+            color: white;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .newsletter-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none"><path d="M1200 120L0 16.48 0 0 1200 0 1200 120z" fill="%23ffffff"/></svg>');
+            background-size: 100% 100px;
+            background-repeat: no-repeat;
+            background-position: bottom;
+            opacity: 0.1;
+        }
+
+        .newsletter-content h2 {
+            font-size: 3rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .newsletter-content p {
+            font-size: 1.25rem;
+            opacity: 0.9;
+            margin-bottom: 3rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .newsletter-form {
+            max-width: 500px;
+            margin: 0 auto;
+        }
+
+        .form-group {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .form-control {
+            flex: 1;
+            min-width: 300px;
+            padding: 1rem 1.5rem;
+            border: none;
+            border-radius: 50px;
+            font-family: 'Inter', sans-serif;
+            font-size: 1rem;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .btn-newsletter {
+            background: white;
+            color: var(--primary);
+            padding: 1rem 3rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: var(--transition);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn-newsletter:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+        }
+
+        /* Footer */
+        .footer-premium {
+            background: var(--dark);
+            color: white;
+            padding: 5rem 0 2rem;
+        }
+
+        .footer-brand {
+            margin-bottom: 2rem;
+        }
+
+        .footer-brand h3 {
+            font-size: 2rem;
+            font-weight: 800;
+            margin-bottom: 0.5rem;
+            font-family: 'Playfair Display', serif;
+        }
+
+        .footer-brand p {
+            opacity: 0.7;
+            font-size: 0.9rem;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1.5rem;
+        }
+
+        .social-link {
+            width: 40px;
+            height: 40px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .social-link:hover {
+            background: var(--gradient);
+            transform: translateY(-3px);
+        }
+
+        .footer-links h4 {
+            font-size: 1.25rem;
+            margin-bottom: 1.5rem;
+            color: white;
+        }
+
+        .footer-links ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .footer-links li {
+            margin-bottom: 0.75rem;
+        }
+
+        .footer-links a {
+            color: rgba(255, 255, 255, 0.7);
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .footer-links a:hover {
+            color: white;
+            padding-left: 5px;
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding-top: 2rem;
+            margin-top: 3rem;
+            text-align: center;
+            color: rgba(255, 255, 255, 0.6);
+            font-size: 0.9rem;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 1200px) {
+            .hero-title {
+                font-size: 3.2rem;
+            }
+            
+            .section-header h2 {
+                font-size: 2.8rem;
+            }
+            
+            .about-content {
+                grid-template-columns: 1fr;
+                gap: 3rem;
+            }
+            
+            .about-image {
+                order: -1;
+            }
+        }
+
+        @media (max-width: 992px) {
+            .hero-title {
+                font-size: 2.8rem;
+            }
+            
+            .section-header h2 {
+                font-size: 2.5rem;
+            }
+            
+            .hero-actions {
+                justify-content: center;
+            }
+            
+            .hero-stats {
+                justify-content: center;
+                flex-wrap: wrap;
+                gap: 2rem;
+            }
+            
+            .newsletter-content h2 {
+                font-size: 2.5rem;
+            }
+            
+            .form-group {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .form-control {
+                min-width: 100%;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .hero-title {
+                font-size: 2.4rem;
+            }
+            
+            .section-header h2 {
+                font-size: 2.2rem;
+            }
+            
+            .hero-image img {
+                transform: none;
+            }
+            
+            .about-features {
+                grid-template-columns: 1fr;
+            }
+            
+            .episodes-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .guests-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .hero-title {
+                font-size: 2rem;
+            }
+            
+            .hero-subtitle {
+                font-size: 1.1rem;
+            }
+            
+            .section-header h2 {
+                font-size: 1.8rem;
+            }
+            
+            .btn-hero-primary,
+            .btn-hero-secondary {
+                width: 100%;
+                justify-content: center;
+            }
+            
+            .newsletter-content h2 {
+                font-size: 2rem;
+            }
+            
+            .hero-badge {
+                font-size: 0.8rem;
+                padding: 0.4rem 1rem;
+            }
+        }
+    </style>
+</head>
+<body style="opacity: 0; transition: opacity 0.4s ease" onload="document.body.style.opacity='1'">
+    <!-- Premium Navbar -->
+    <nav class="navbar navbar-expand-xl navbar-premium fixed-top">
+        <div class="container">
+            <!-- Logo -->
+            <a class="navbar-brand" href="#">
+                <div class="brand-wrapper">
+                    <div class="brand-logo">C</div>
+                    <span class="brand-main">Conversations</span>
+                </div>
+            </a>
+
+            <!-- Mobile Toggle -->
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent" 
+                    aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <!-- Navbar Content -->
+            <div class="collapse navbar-collapse" id="navbarContent">
+                <ul class="navbar-nav mx-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#home">
+                            <i class="fas fa-home me-1"></i>
+                            Home
+                        </a>
+                    </li>
+                    
+                    <li class="nav-item">
+                        <a class="nav-link" href="#episodes">
+                            <i class="fas fa-podcast me-1"></i>
+                            Episodes
+                        </a>
+                    </li>
+                    
+                    <li class="nav-item">
+                        <a class="nav-link" href="#guests">
+                            <i class="fas fa-users me-1"></i>
+                            Guests
+                        </a>
+                    </li>
+                    
+                    <li class="nav-item">
+                        <a class="nav-link" href="#about">
+                            <i class="fas fa-user me-1"></i>
+                            About
+                        </a>
+                    </li>
+                    
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contact">
+                            <i class="fas fa-envelope me-1"></i>
+                            Contact
+                        </a>
+                    </li>
+                </ul>
+
+                <!-- CTA Button -->
+                <div class="nav-actions">
+                    <a href="#newsletter" class="btn-nav-cta">
+                        <i class="fas fa-headphones me-1"></i>
+                        Subscribe
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-premium" id="home">
+        <div class="hero-background-animation">
+            <div class="sound-wave"></div>
+        </div>
+
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6" data-aos="fade-up" data-aos-duration="1000">
+                    <div class="hero-content">
+                        <div class="hero-badge" data-aos="fade-up" data-aos-delay="200">
+                            <span>🎙️ New Episode Every Tuesday</span>
+                        </div>
+                        <h1 class="hero-title" data-aos="fade-up" data-aos-delay="400">
+                            Deep Conversations with 
+                            <span class="gradient-text">Industry Leaders</span>
+                        </h1>
+                        <p class="hero-subtitle" data-aos="fade-up" data-aos-delay="600">
+                            Join me for exclusive, in-depth interviews with the world's most influential thinkers, creators, and innovators. Each episode uncovers stories, insights, and wisdom you won't find anywhere else.
+                        </p>
+
+                        <div class="hero-highlight" data-aos="fade-up" data-aos-delay="700">
+                            <i class="fas fa-calendar-alt"></i>
+                            <span>Next Guest: CEO of TechVision - January 15, 2024</span>
+                        </div>
+
+                        <div class="hero-actions" data-aos="fade-up" data-aos-delay="800">
+                            <a href="#episodes" class="btn-hero-primary">
+                                <i class="fas fa-play-circle"></i>
+                                <span>Listen Now</span>
+                            </a>
+                            <a href="#guests" class="btn-hero-secondary">
+                                <i class="fas fa-users"></i>
+                                <span>Meet Guests</span>
+                            </a>
+                        </div>
+
+                        <div class="hero-stats" data-aos="fade-up" data-aos-delay="1000">
+                            <div class="stat-item">
+                                <h3>250+</h3>
+                                <p>Episodes</p>
+                            </div>
+                            <div class="stat-item">
+                                <h3>5M+</h3>
+                                <p>Monthly Listeners</p>
+                            </div>
+                            <div class="stat-item">
+                                <h3>50+</h3>
+                                <p>Countries</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-6" data-aos="fade-left" data-aos-duration="1200" data-aos-delay="200">
+                    <div class="hero-image">
+                        <img src="https://images.unsplash.com/photo-1598899134739-24c46f58b8c0?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" class="img-fluid" alt="Podcast Recording">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Guests Section -->
+    <section class="guests-section" id="guests">
+        <div class="container">
+            <div class="section-header text-center" data-aos="fade-up">
+                <h2>Featured <span class="gradient-text">Guests</span></h2>
+                <p class="section-subtitle">
+                    Meet some of the incredible people who've joined me for conversations
+                </p>
+            </div>
+
+            <div class="guests-grid">
+                <div class="guest-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="guest-image">
+                        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Alex Johnson">
+                    </div>
+                    <div class="guest-info">
+                        <h3 class="guest-name">Alex Johnson</h3>
+                        <div class="guest-title">CEO, TechVision Inc.</div>
+                        <p class="guest-excerpt">
+                            In our conversation, Alex shares his journey from garage startup to billion-dollar company and his vision for the future of AI.
+                        </p>
+                        <a href="#" class="guest-link">
+                            Listen to Episode
+                            <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="guest-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="guest-image">
+                        <img src="https://images.unsplash.com/photo-1494790108755-2616b612b786?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Sarah Chen">
+                    </div>
+                    <div class="guest-info">
+                        <h3 class="guest-name">Sarah Chen</h3>
+                        <div class="guest-title">Bestselling Author</div>
+                        <p class="guest-excerpt">
+                            Sarah discusses her writing process, overcoming creative blocks, and the power of storytelling in modern business.
+                        </p>
+                        <a href="#" class="guest-link">
+                            Listen to Episode
+                            <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="guest-card" data-aos="fade-up" data-aos-delay="300">
+                    <div class="guest-image">
+                        <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Marcus Rivera">
+                    </div>
+                    <div class="guest-info">
+                        <h3 class="guest-name">Marcus Rivera</h3>
+                        <div class="guest-title">Environmental Scientist</div>
+                        <p class="guest-excerpt">
+                            Marcus explains groundbreaking climate research and shares practical steps for sustainable living in the 21st century.
+                        </p>
+                        <a href="#" class="guest-link">
+                            Listen to Episode
+                            <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Podcast Platforms -->
+    <section class="platforms-section">
+        <div class="container">
+            <div class="section-header text-center" data-aos="fade-up">
+                <h2>Listen <span class="gradient-text">Everywhere</span></h2>
+                <p class="section-subtitle">
+                    Available on all major podcast platforms
+                </p>
+            </div>
+
+            <div class="platforms-grid" data-aos="fade-up" data-aos-delay="200">
+                <div class="platform-item">
+                    <i class="fab fa-spotify platform-icon"></i>
+                    <span>Spotify</span>
+                </div>
+                <div class="platform-item">
+                    <i class="fab fa-apple platform-icon"></i>
+                    <span>Apple Podcasts</span>
+                </div>
+                <div class="platform-item">
+                    <i class="fab fa-google platform-icon"></i>
+                    <span>Google Podcasts</span>
+                </div>
+                <div class="platform-item">
+                    <i class="fab fa-youtube platform-icon"></i>
+                    <span>YouTube</span>
+                </div>
+                <div class="platform-item">
+                    <i class="fas fa-wifi platform-icon"></i>
+                    <span>RSS Feed</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about-section" id="about">
+        <div class="container">
+            <div class="about-content" data-aos="fade-up">
+                <div class="about-image">
+                    <img src="https://images.unsplash.com/photo-1545235617-9465d2a55698?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Host">
+                </div>
+                <div class="about-text">
+                    <h3>Hi, I'm <span class="gradient-text">[Your Name]</span></h3>
+                    <p>
+                        For over 5 years, I've been having conversations that matter. What started as a passion project has grown into one of the top-rated interview podcasts globally.
+                    </p>
+                    <p>
+                        My approach is simple: create a space where guests feel comfortable sharing their authentic stories, struggles, and successes. The result? Conversations that inspire, educate, and connect.
+                    </p>
+                    
+                    <div class="about-features">
+                        <div class="feature-item">
+                            <div class="feature-icon">
+                                <i class="fas fa-microphone"></i>
+                            </div>
+                            <div class="feature-content">
+                                <h4>250+ Interviews</h4>
+                                <p>With global leaders</p>
+                            </div>
+                        </div>
+                        <div class="feature-item">
+                            <div class="feature-icon">
+                                <i class="fas fa-trophy"></i>
+                            </div>
+                            <div class="feature-content">
+                                <h4>15 Awards</h4>
+                                <p>Industry recognition</p>
+                            </div>
+                        </div>
+                        <div class="feature-item">
+                            <div class="feature-icon">
+                                <i class="fas fa-globe"></i>
+                            </div>
+                            <div class="feature-content">
+                                <h4>Global Reach</h4>
+                                <p>5M+ monthly listeners</p>
+                            </div>
+                        </div>
+                        <div class="feature-item">
+                            <div class="feature-icon">
+                                <i class="fas fa-calendar"></i>
+                            </div>
+                            <div class="feature-content">
+                                <h4>Weekly Episodes</h4>
+                                <p>Consistent content</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Latest Episodes -->
+    <section class="episodes-section" id="episodes">
+        <div class="container">
+            <div class="section-header text-center" data-aos="fade-up">
+                <h2>Latest <span class="gradient-text">Episodes</span></h2>
+                <p class="section-subtitle">
+                    Dive into our most recent conversations
+                </p>
+            </div>
+
+            <div class="episodes-grid">
+                <div class="episode-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="episode-header">
+                        <div class="episode-number">Episode #251</div>
+                        <h3 class="episode-title">The Future of AI in Healthcare</h3>
+                        <div class="episode-guest">
+                            <div class="guest-avatar">
+                                <img src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80" alt="Dr. Maya Rodriguez">
+                            </div>
+                            <div class="guest-details">
+                                <h4>Dr. Maya Rodriguez</h4>
+                                <p>Medical AI Researcher</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="episode-footer">
+                        <div class="episode-meta">
+                            <span><i class="far fa-clock"></i> 58 min</span>
+                            <span><i class="far fa-calendar"></i> Jan 2, 2024</span>
+                        </div>
+                        <a href="#" class="play-btn">
+                            <i class="fas fa-play"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="episode-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="episode-header">
+                        <div class="episode-number">Episode #250</div>
+                        <h3 class="episode-title">Building Sustainable Cities</h3>
+                        <div class="episode-guest">
+                            <div class="guest-avatar">
+                                <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80" alt="James Wilson">
+                            </div>
+                            <div class="guest-details">
+                                <h4>James Wilson</h4>
+                                <p>Urban Planner & Architect</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="episode-footer">
+                        <div class="episode-meta">
+                            <span><i class="far fa-clock"></i> 72 min</span>
+                            <span><i class="far fa-calendar"></i> Dec 26, 2023</span>
+                        </div>
+                        <a href="#" class="play-btn">
+                            <i class="fas fa-play"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="episode-card" data-aos="fade-up" data-aos-delay="300">
+                    <div class="episode-header">
+                        <div class="episode-number">Episode #249</div>
+                        <h3 class="episode-title">The Psychology of Success</h3>
+                        <div class="episode-guest">
+                            <div class="guest-avatar">
+                                <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80" alt="Dr. Lisa Park">
+                            </div>
+                            <div class="guest-details">
+                                <h4>Dr. Lisa Park</h4>
+                                <p>Behavioral Psychologist</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="episode-footer">
+                        <div class="episode-meta">
+                            <span><i class="far fa-clock"></i> 65 min</span>
+                            <span><i class="far fa-calendar"></i> Dec 19, 2023</span>
+                        </div>
+                        <a href="#" class="play-btn">
+                            <i class="fas fa-play"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter Section -->
+    <section class="newsletter-section" id="newsletter">
+        <div class="container">
+            <div class="newsletter-content" data-aos="fade-up">
+                <h2>Never Miss an Episode</h2>
+                <p>
+                    Subscribe to our newsletter and get notified about new episodes, exclusive content, and behind-the-scenes insights directly in your inbox.
+                </p>
+                
+                <div class="newsletter-form" data-aos="fade-up" data-aos-delay="200">
+                    <form id="subscribe-form">
+                        <div class="form-group">
+                            <input type="email" class="form-control" placeholder="Your email address" required>
+                            <button type="submit" class="btn-newsletter">
+                                <i class="fas fa-paper-plane"></i>
+                                Subscribe
+                            </button>
+                        </div>
+                        <p style="margin-top: 1rem; opacity: 0.8; font-size: 0.9rem;">
+                            We respect your privacy. Unsubscribe at any time.
+                        </p>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer-premium" id="contact">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4">
+                    <div class="footer-brand">
+                        <h3>Conversations</h3>
+                        <p>Deep interviews with interesting people. New episodes every Tuesday.</p>
+                        <div class="social-links">
+                            <a href="#" class="social-link">
+                                <i class="fab fa-spotify"></i>
+                            </a>
+                            <a href="#" class="social-link">
+                                <i class="fab fa-apple"></i>
+                            </a>
+                            <a href="#" class="social-link">
+                                <i class="fab fa-youtube"></i>
+                            </a>
+                            <a href="#" class="social-link">
+                                <i class="fab fa-twitter"></i>
+                            </a>
+                            <a href="#" class="social-link">
+                                <i class="fab fa-instagram"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-6">
+                    <div class="footer-links">
+                        <h4>Podcast</h4>
+                        <ul>
+                            <li><a href="#episodes">All Episodes</a></li>
+                            <li><a href="#guests">Featured Guests</a></li>
+                            <li><a href="#">Most Popular</a></li>
+                            <li><a href="#">Topics</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-6">
+                    <div class="footer-links">
+                        <h4>About</h4>
+                        <ul>
+                            <li><a href="#about">The Host</a></li>
+                            <li><a href="#">Our Story</a></li>
+                            <li><a href="#">Awards</a></li>
+                            <li><a href="#">Press</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-6">
+                    <div class="footer-links">
+                        <h4>Connect</h4>
+                        <ul>
+                            <li><a href="#contact">Contact</a></li>
+                            <li><a href="#">Guest Inquiries</a></li>
+                            <li><a href="#">Partnerships</a></li>
+                            <li><a href="#">Advertise</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-6">
+                    <div class="footer-links">
+                        <h4>Legal</h4>
+                        <ul>
+                            <li><a href="#">Privacy Policy</a></li>
+                            <li><a href="#">Terms of Service</a></li>
+                            <li><a href="#">Cookie Policy</a></li>
+                            <li><a href="#">Accessibility</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Conversations Podcast. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+    <script>
+        // Initialize AOS
+        AOS.init({
+            duration: 1000,
+            once: true,
+            offset: 100,
+        });
+
+        // Navbar scroll effect
+        window.addEventListener('scroll', function() {
+            const navbar = document.querySelector('.navbar-premium');
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+
+        // Smooth scrolling for anchor links
+        document.addEventListener('DOMContentLoaded', function() {
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    const href = this.getAttribute('href');
+                    
+                    if (href === '#') return;
+                    
+                    e.preventDefault();
+                    
+                    const targetElement = document.querySelector(href);
+                    if (targetElement) {
+                        window.scrollTo({
+                            top: targetElement.offsetTop - 80,
+                            behavior: 'smooth'
+                        });
+                        
+                        // Close mobile menu if open
+                        const navbarCollapse = document.querySelector('.navbar-collapse.show');
+                        if (navbarCollapse) {
+                            const bsCollapse = new bootstrap.Collapse(navbarCollapse);
+                            bsCollapse.hide();
+                        }
+                    }
+                });
+            });
+            
+            // Newsletter form submission
+            const subscribeForm = document.getElementById('subscribe-form');
+            if (subscribeForm) {
+                subscribeForm.addEventListener('submit', function(e) {
+                    e.preventDefault();
+                    const emailInput = this.querySelector('input[type="email"]');
+                    if (emailInput.value) {
+                        alert('Thank you for subscribing! You\'ll hear from us soon.');
+                        emailInput.value = '';
+                    }
+                });
+            }
+        });
+    </script>
+</body>
+</html>
